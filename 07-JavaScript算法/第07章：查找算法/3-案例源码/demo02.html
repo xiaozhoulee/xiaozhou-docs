@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [3, 5, 8, 12, 15, 11, 20, 6];
+        Array.prototype.search = function (val) {
+            var result = -1;
+            this.map(function(value,index){
+                if(value === val){
+                    result = index;
+                }
+                    
+            })
+            return result;
+        }
+
+        console.log(arr.search(12));
+        console.log(arr.search(100));
+    </script>
+</body>
+
+</html>

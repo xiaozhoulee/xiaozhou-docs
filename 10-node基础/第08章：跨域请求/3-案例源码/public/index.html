@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button>发送jsonp请求</button>
+    <script src="script/jquery.js"></script>
+    <script>
+        $("button").click(function(){
+            $.ajax({
+                url:"http://127.0.0.1:8080/data",
+                dataType:"jsonp"
+            }).done(function(res){
+                alert(res);
+            })
+        })
+    </script>
+</body>
+</html>

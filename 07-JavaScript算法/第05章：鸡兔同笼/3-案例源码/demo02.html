@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getNumber(heads,foots){
+            var result = {
+                chickNumber:0,
+                rabitNumber:0
+            }
+            var chickNumber = 0;
+            var rabitNumber = 0;
+
+            //鸡和兔子都抬起两只脚，剩余的就是所有兔子的另外两只脚。
+            var rabitFoots = foots - heads * 2;
+            
+            //计算兔子的个数
+            rabitNumber = rabitFoots / 2;
+
+            //计算鸡的个数
+            chickNumber = heads - rabitNumber;
+
+            result.chickNumber = chickNumber;
+            result.rabitNumber = rabitNumber;
+
+            return result;
+        }
+
+        console.log(getNumber(35,96))    
+    </script>
+</body>
+</html>

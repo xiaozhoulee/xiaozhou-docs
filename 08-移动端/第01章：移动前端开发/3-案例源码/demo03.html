@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- 设置viewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+		.box{
+			height:300px;
+			background-color:red;
+		}
+	</style>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+        var box = document.querySelector(".box");
+        box.ontouchstart = function(){
+            console.log("手指接触屏幕")
+        }
+        box.ontouchmove = function(){
+            console.log("手指在屏幕上移动")
+        }
+        box.ontouchend = function(){
+            console.log("手指在屏幕抬起")
+        }
+    </script>
+</body>
+</html>

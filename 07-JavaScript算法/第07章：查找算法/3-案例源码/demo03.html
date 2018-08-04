@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [3, 5, 8, 12, 15, 11, 20, 6];
+        Array.prototype.searchMax = function(){
+            var max = {             //初始化一个对象，value为最大值，index为最大索引，初始为第一个原始
+                value: this[0],
+                index:0
+            }
+            for(var i = 1;i<this.length;i++){
+                if(this[i]>max.value){   //如果遍历的过程中发现更大的值，替换max
+                    max.value = this[i];
+                    max.index = i;
+                }
+            }
+            return max;
+        }
+
+        console.log(arr.searchMax());
+    </script>
+</body>
+</html>

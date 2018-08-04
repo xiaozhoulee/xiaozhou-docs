@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button>停止</button>
+	<script>
+		var btn = document.querySelector("button");
+		var t = setInterval(function(){
+			console.log("hello world");
+		},3000)
+		btn.onclick = function(){
+			clearTimeout(t);
+		}
+	</script>
+</body>
+</html>

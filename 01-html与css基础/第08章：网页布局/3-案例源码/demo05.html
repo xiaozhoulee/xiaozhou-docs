@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+            box-sizing: border-box;
+        }
+        .header{
+            width:1000px;
+            height:200px;
+            margin:0 auto;
+            background-color: #eee;
+        }
+        .header .nav li{
+            list-style:none; /*清除列表前面的点*/
+            width:80px;
+            height:30px;
+            line-height: 30px;  /*垂直居中*/
+            text-align: center; /*水平居中*/
+            float:left;         /*菜单横向展示*/
+            border:1px solid red;
+        }
+
+        a{
+            text-decoration: none;  /*去掉a标签的下划线*/
+            color:#666;
+        }
+        .banner{
+            width:1000px;
+            height:300px;
+            margin:0 auto;
+            background-color: #aaa;
+        }
+
+        
+        .container{
+            width:1000px;
+            height:500px;
+            margin:0 auto;
+            background-color: #f00;
+        }
+        .footer{
+            width:1000px;
+            height:50px;
+            margin:0 auto;
+            background-color: #0f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="nav">
+            <ul>
+                <li><a href="#">首頁</a></li>
+                <li><a href="#">游戏</a></li>
+                <li><a href="#">视频</a></li>
+                <li><a href="#">动画</a></li>
+                <li><a href="#">音乐</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="banner"></div>
+    <div class="container"></div>
+    <div class="footer"></div>
+</body>
+</html>

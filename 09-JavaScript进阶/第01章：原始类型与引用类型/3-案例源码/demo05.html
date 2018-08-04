@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var obj = {name:'xiaoming'};
+		function fun(o){
+			o.name = 'xiaohong'
+		}
+
+		fun(obj);
+		console.log(obj.name);  //xiaohong
+	</script>
+</body>
+</html>

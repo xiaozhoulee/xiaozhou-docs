@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        .box{
+            width:100%;
+            height:300px;
+        }
+        .red{
+            background-color:red;
+        }
+        .yellow{
+            background-color:yellow;
+        }
+        .blue{
+            background-color:blue;
+        }
+        .green{
+            background-color:green;
+        }
+        @media screen and (min-width:760px) {
+            .box{
+                float:left;
+                width:25%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box red"></div>
+        <div class="box yellow"></div>
+        <div class="box blue"></div>
+        <div class="box green"></div>
+    </div>
+</body>
+</html>

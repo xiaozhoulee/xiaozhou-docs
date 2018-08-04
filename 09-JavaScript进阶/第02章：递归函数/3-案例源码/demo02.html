@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function showNumber(n){
+			console.log(n);
+			if(n > 1){
+				showNumber(--n);
+			}
+		}
+		showNumber(5);
+	</script>
+</body>
+</html>

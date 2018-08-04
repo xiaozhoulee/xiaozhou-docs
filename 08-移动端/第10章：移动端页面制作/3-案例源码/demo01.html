@@ -1,0 +1,96 @@
+<?php
+//demo1.php
+$x = 5;
+echo '$x'; //会原样输出，不会输出5
+echo "$x"; //这样才行
+
+
+//demo2.php
+$y = 80;
+echo "我的学习成绩是：" . $y . '分';
+echo "孔子曰：\"有朋自远方来，不亦乐乎?\""; //用反斜线转义
+
+
+//demo3.php
+//界定符：相当于双引号。
+$z = "我能被输出来吗？";
+$o = <<<str
+这是一段文字内容，$z
+str;
+echo $o;
+
+
+//demo4.php
+echo '<hr />';
+$q = 0; //分别展示为零、空数组、空字串、未声明的变量后的效果。
+//echo @$z ? '真' : '假'; //三元运算符。加@可屏蔽未声明变量时的错误。
+
+
+//demo5.php
+$arr = array(1,3,5); //索引数组
+$arr = array('a'=>1,'b'=>2); //关联数组
+
+//友好打印
+echo '<pre>';
+//print_r($arr);
+echo '</pre>';
+
+
+//demo6.php
+$v = null;
+//unset($v);
+echo is_null($v);
+
+
+//demo7.php
+echo '<br />';
+$w = null; //换成零、空数组、空字串等试下
+echo '$w是否为空：' . empty($w) . '<hr />';
+//echo isset($w); //假
+
+//实战中常用empty()接收$_POST值来判断是否提交了
+$str = <<<str
+<form action='' method='post'>
+<input type='text' name='user' />
+<input type='submit' value='提交' name='sub' />
+</form>
+str;
+echo $str;
+
+if(!empty($_POST)){ //这里用其它检测函数就不太合适了。
+	print_r($_POST);
+}
+
+
+//demo8.php
+echo 'demo8.php内容：<br />';
+$o = 123;
+$oo = (string)$o; //只转换返回值
+settype($o, 'string'); //这样会直接转换原变量类型
+echo is_integer($o);
+echo is_string($o);
+echo '<hr />';
+
+
+//demo9.php
+$x = ''; //尝试下多种情况下的转换规律
+if($x){
+	echo '真';
+}else{
+	echo '假';
+}
+
+//自动转换：
+$x = 1 + 0.12; //返回浮点型
+$y = 2 + "3.14"; //类型是double，double就是浮点型
+$z = 3 + "abc"; //字串转零，然后相加
+$p = 4 + "12abc"; //值为16
+$q = 5 + "3.2abc"; //返回类型为浮点型。
+echo '值为：' . $q . '。类型为：' . gettype($q);
+
+//常用的运算时自动转化：
+$x = 5;
+$y = $x + '5';
+echo '<br />$y的类型是：' . gettype($y) . '$y的值为：' . $y;
+
+?>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h1>内容：</h1>
+	<button>添加文本节点</button>
+	<script>
+		var h1 = document.querySelector("h1");
+		var btn = document.querySelector("button");
+		btn.onclick = function(){
+			var str = h1.innerHTML;//获取文本内容
+			h1.innerHTML =str + "hello world"; //原文本内容与新文本内容连接
+		}
+	</script>
+</body>
+</html>

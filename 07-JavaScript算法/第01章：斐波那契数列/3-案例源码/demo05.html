@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fibo(n){
+            if(n===1 || n===2){
+                return 1;
+            }else{
+                return fibo(n-2) + fibo(n-1);
+            }
+        }    
+
+        function getFibo(n){
+            var fiboList = [];
+            for(var i = 1;i<=n;i++){
+                fiboList.push(fibo(i));
+            }
+            return fiboList;
+        }
+
+        console.log(getFibo(50));
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var student1 = {name:'xiaoming',age:2,sex:'male'};
+		
+		function clone(obj){
+			var newobj = {};    //创建一个新对象
+			for(var i in obj){  //遍历传进来的参数对象
+				newobj[i] = obj[i];  //将传进来的参数的属性和属性值赋值给新对象的同名属性。
+			}
+			return newobj;      //返回新创建的对象
+		}
+
+		var student2 = clone(student1);
+		student1.name = 'xiaohong';
+		console.log(student1.name);
+		console.log(student2.name);
+	</script>
+</body>
+</html>

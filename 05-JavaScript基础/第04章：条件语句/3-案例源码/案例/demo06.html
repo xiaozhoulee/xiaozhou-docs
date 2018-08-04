@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var num1 = 10;
+		var num2 = 20;
+		var sign = "+";  //通过修改操作符，输出不同的结果
+		var result = 0;  //result用来存储计算的结果，现在设置一个初始值0
+		if(sign === "+"){
+			result = num1 + num2;
+			console.log(result);
+		}else if(sign === "-"){
+			result = num1 - num2;
+			console.log(result);
+		}else if(sign === "*"){
+			result = num1 * num2;
+			console.log(result);
+		}else if(sign === "/"){
+			result = num1 / num2;
+			console.log(result);
+		}else{
+			console.log("请输入正确的运算符")
+		}
+	</script>
+</body>
+</html>

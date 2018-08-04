@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./fonts/iconfont.css">
+	<script src="script/fontsizeset.js"></script>
+	<style>
+		*{
+			margin:0px;
+			padding:0px;
+		}
+		body{
+			background-color: #eee;
+		}
+		.disk{
+			width:3.6rem;
+			margin:0.5rem auto;
+		}
+		.disk img{
+			width:3.6rem;
+			height:3.6rem;
+			border-radius: 50%;
+            animation: around 5s linear infinite;
+		}
+		.btn{
+			font-size: 30px;
+			text-align: center;
+		}
+
+        @keyframes around{
+            from{
+                transform: rotate(0deg);
+            }
+            to{
+                transform:rotate(360deg);
+            }
+        }
+
+        .disk .stop{
+            animation-play-state: paused;
+        }
+
+        .iconfont{
+            font-size: 0.5rem;
+        }
+	</style>
+</head>
+<body>
+	<div class="music-box">
+        <audio src="media/music.mp3" autoplay></audio>
+		<div class="disk">
+			<img src="images/disk.png" alt="">
+		</div>
+		<div class="btn">
+			<button class="start"><i class="iconfont icon-playfill"></i></button>
+			<button class="stop"><i class="iconfont icon-stop"></i></button>
+		</div>
+    </div>
+    
+    <script src="script/jquery.js"></script>
+    <script>
+        var audio =  document.querySelector("audio");
+        $(".start").click(function(){
+            $(".disk img").removeClass("stop");
+            audio.play();   //播放音乐
+        })
+        $(".stop").click(function(){
+            $(".disk img").addClass("stop");
+           audio.pause();   //停止播放音乐
+        })
+
+    </script>
+</body>
+</html>

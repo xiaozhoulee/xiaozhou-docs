@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: #00f;
+            animation: anim 10s;
+        }
+
+        @keyframes anim {
+            0% {
+                transform: translate(0px, 0px)
+            }
+            25%{
+                transform: translate(500px, 0px)
+            }
+            50%{
+                transform: translate(500px, 500px)
+            }
+            75%{
+                transform: translate(0px, 500px)
+            }
+            100%{
+                transform: translate(0px, 0px)
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">html元素</div>
+</body>
+
+</html>

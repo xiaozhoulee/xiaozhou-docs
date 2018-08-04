@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //冒泡排序
+        var arr = [3, 5, 8, 12, 15, 11, 20, 6];
+        Array.prototype.bubbleSort = function(){
+            var len = this.length;
+            for (var i = len; i >= 2; i--) {  
+                for (var j = 0; j < i; j++) {
+                    if (this[j] > this[j + 1]) {
+                        //两个元素窎远位置
+                        var temp = this[j];
+                        this[j] = this[j+1];
+                        this[j+1] = temp;
+                    }
+                }
+            }
+            return this;
+        }
+        console.log(arr.bubbleSort());
+    </script>
+</body>
+</html>

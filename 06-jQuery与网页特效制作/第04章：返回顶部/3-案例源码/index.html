@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0px;
+			padding:0px;
+		}
+		.header{
+			width:1000px;
+			height:300px;
+			background-color:#aaa;
+			margin:0 auto;
+		}
+		.banner{
+			width:1000px;
+			height:500px;
+			background-color:#eee;
+			margin:0 auto;
+		}
+		.container{
+			width:1000px;
+			height:800px;
+			background-color:#bbb;
+			margin:0 auto;
+		}
+		.footer{
+			width:1000px;
+			height:200px;
+			background-color:#777;
+			margin:0 auto;
+		}
+		/* 按钮的默认样式 */
+		.to-top{
+			position: fixed;
+			width:80px;
+			height:80px;
+			bottom:20px;
+			right:20px;
+			display: none;
+		}
+		/* 显示按钮 */
+		.to-top-show{
+			display: inline-block;
+		}
+	</style>
+</head>
+<body>
+	<div class="header">
+		<h1>网页头部</h1>
+	</div>
+	<div class="banner">
+		<h1>网页banner</h1>
+	</div>
+	<div class="container">
+		<h1>网页内容</h1>
+	</div>
+	<div class="footer">
+		<h1>网页底部</h1>
+	</div>
+	<button class="to-top">返回顶部</button>
+	<script src="script/jquery.js"></script>
+	<script>
+		// 绑定网页滚轮滚动事件
+		$(window).scroll(function(){
+			// 如果网页滚轮滚动，显示返回顶部
+			if($(this).scrollTop() > 0){
+				$(".to-top").addClass("to-top-show");
+			}else{
+				$(".to-top").removeClass("to-top-show");
+			}
+		})
+		// 点击返回顶部按钮时，页面动态滚动到页面最上方。
+		$(".to-top").click(function(){
+			$("html,body").animate({
+				scrollTop:0
+			},500)
+		})
+	</script>
+</body>
+</html>

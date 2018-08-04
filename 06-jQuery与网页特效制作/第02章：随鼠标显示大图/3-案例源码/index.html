@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0px;
+			padding:0px;
+		}
+		.pic-list li{
+			list-style: none;
+			float: left;
+		}
+		.pic-list img{
+			width:300px;
+		}
+		/* 设置新图为绝对定位元素 */
+		.append-pic{
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+	<ul class="pic-list">
+		<li><img src="images/0.jpg" alt=""></li>
+		<li><img src="images/1.jpg" alt=""></li>
+		<li><img src="images/2.jpg" alt=""></li>
+	</ul>
+	<script src="script/jquery.js"></script>
+	<script>
+		$(".pic-list li img").mouseenter(function(){
+			var appendPic = $("<img class='append-pic'>"); //创建img标签
+			var url = $(this).attr("src");  //获取原图url
+			appendPic.attr("src",url);      //将新图url设置成与原图相同
+			$("body").append(appendPic);    //将新图插入到body标签中
+		}).mousemove(function(e){
+			var x = e.pageX;              //获取鼠标x坐标
+			var y = e.pageY;			  //获取鼠标y坐标
+			$(".append-pic").css({        //将新图的位置设置成与鼠标相同
+				top:y+20,
+				left:x+20
+			})
+
+		}).mouseleave(function(){
+			$(".append-pic").remove();    //当鼠标移出图片，删除新图。
+		})
+	</script>
+</body>
+</html>

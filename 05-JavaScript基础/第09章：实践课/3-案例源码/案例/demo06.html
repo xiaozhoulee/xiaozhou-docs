@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var num1 = Number(prompt("请输入第一个数字")); 
+		var sign = prompt("请输入+-*/中的任意操作符");
+		var num2 = Number(prompt("请输入第二个数字"));
+		var result;
+
+		function count(n,s,m){    
+			switch(s){
+				case "+":return n+m;break;
+				case "-":return n-m;break;
+				case "*":return n*m;break;
+				case "/":return n/m;break;
+			}
+		}
+
+		result = count(num1,sign,num2);
+		alert(result);
+	</script>
+</body>
+</html>

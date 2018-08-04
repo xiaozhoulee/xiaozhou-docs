@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="app">
+		<app></app>
+	</div>
+	<script src="../../script/vue.js"></script>
+	<script>
+		var bus = new Vue();
+
+		Vue.component("app",{
+			template:`
+				<div>
+					<number></number>
+					<btn></btn>
+				</div>
+			`
+		})
+
+		Vue.component("number",{
+			template:`<h1>{{count}}</h1>`,
+			data:function(){
+				return {
+					count:0
+				}
+			},
+			mounted:function(){
+				var self = this;
+				bus.$on("add",function(){
+					self.count++;
+				});
+				bus.$on("sub",function(){
+					self.count--;
+				})
+			}
+		})
+
+		Vue.component("btn",{
+			template:`
+				<div>
+					<button v-on:click="btnSub">-</button>
+					<button v-on:click="btnAdd">+</button>
+				</div>
+			`,
+			methods:{
+				btnSub:function(){
+					bus.$emit("sub");
+				},
+				btnAdd:function(){
+					bus.$emit("add");
+				}
+			}
+		})
+
+		new Vue({
+			el:"#app"
+		})
+	</script>
+</body>
+</html>

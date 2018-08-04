@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function Cat(name,age){
+			this.name = name;
+			this.age = age;
+			this.sayName = function(){
+				console.log("我是"+this.name);
+			}
+		}
+		var cat = new Cat("miaomiao",2);
+		cat.sayName();
+	</script>
+</body>
+</html>

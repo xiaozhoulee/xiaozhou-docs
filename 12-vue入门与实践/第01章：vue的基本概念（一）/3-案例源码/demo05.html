@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="app">
+		<button v-on:click="myEvent">按钮</button>
+	</div>
+	<script src="../../script/vue.js"></script>
+	<script>
+		new Vue({
+			el:"#app",
+			methods:{
+				myEvent:function(){
+					alert("hello world")
+				}
+			}
+		})
+	</script>
+</body>
+</html>

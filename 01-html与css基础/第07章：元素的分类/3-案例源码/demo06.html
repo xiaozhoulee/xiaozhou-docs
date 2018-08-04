@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .nav li{
+            list-style:none; /*清除列表前面的点*/
+            width:80px;
+            height:30px;
+            line-height: 30px;  /*垂直居中*/
+            text-align: center; /*水平居中*/
+            float:left;         /*菜单横向展示*/
+            border:1px solid red;
+        }
+
+        a{
+            text-decoration: none;  /*去掉a标签的下划线*/
+            color:#666;
+        }
+
+        .content{
+            border:1px solid blue;
+        }
+
+        .clear{
+            clear:both;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <ul>
+            <li><a href="#">首頁</a></li>
+            <li><a href="#">游戏</a></li>
+            <li><a href="#">视频</a></li>
+            <li><a href="#">动画</a></li>
+            <li><a href="#">音乐</a></li>
+        </ul>
+    </div>
+    <div class="clear"></div>
+    <h2 class="content">网页内容</h2>
+</body>
+</html>

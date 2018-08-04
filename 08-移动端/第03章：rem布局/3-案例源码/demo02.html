@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+		html{
+			/* 修改html的font-size可以影响子元素的em值 */
+			font-size: 50px;
+		}
+		.box .test1{
+			font-size: 1rem;
+		}
+		.box .test2{
+			font-size: 0.5rem;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<p class="test1">测试文字1</p>
+		<p class="test2">测试文字2</p>
+	</div>
+</body>
+</html>

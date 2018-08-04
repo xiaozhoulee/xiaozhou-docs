@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button>ajax方法获取数据</button>
+    
+    <script src="script/jquery.js"></script>
+    <script>
+        $("button").click(function(){
+            $.ajax({
+                url:"/books",
+                type:"get"
+            }).done(function(res){
+                alert(res);
+            })
+        })
+    </script>   
+</body>
+</html>

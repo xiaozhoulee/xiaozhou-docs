@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [1, 3, 5, 7, 9, 15, 19, 21, 25, 55, 79];
+        Array.prototype.search = function (val) {
+            var upperBound = this.length - 1;  //找到数组最高位索引
+            var lowerBound = 0;                //找到数组最低位索引，初始状态为零
+            while (lowerBound <= upperBound) { //如果低位索引小于等于高位索引
+                var mid = Math.floor((upperBound + lowerBound) / 2); // 取低位与高位索引的中间值
+                if (this[mid] < val) {
+                    lowerBound = mid + 1;      //重新设置低位索引
+                }
+                else if (this[mid] > val) {
+                    upperBound = mid - 1;      //重新设置高位索引
+                }
+                else {
+                    return mid;                //如果找到结果，返回当前原始的索引
+                }
+            }
+            return -1;                         //如果没有找到，返回-1
+        }
+
+        console.log(arr.search(15));
+        console.log(arr.search(100));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function outFun(){
+			var n = 10;
+			function inFun(){
+				var m = 100;
+				return m;
+			}
+			return inFun;
+		}
+		
+		var inf = outFun();   //将内部函数赋值给一个变量
+		console.log(inf());
+
+	</script>
+</body>
+</html>

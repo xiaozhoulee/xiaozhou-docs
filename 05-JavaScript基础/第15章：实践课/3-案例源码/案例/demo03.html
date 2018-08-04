@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h1></h1>
+	<script>
+		var h1 = document.querySelector("h1");
+		var target = new Date("2017-8-5 22:30");
+		var targetTime = target.getTime();
+		var ms;
+		function getTimeNow(){		
+			var now = new Date();
+			var nowTime = now.getTime();
+			ms = targetTime - nowTime;
+			var time = getResultTime(ms);
+	    	var timeResult = time.days + "天" + time.hours + "小时" + time.minutes + "分钟" + time.seconds + "秒";
+	    	h1.innerHTML = timeResult;
+		}
+
+		setInterval(getTimeNow,1000);
+
+		function getResultTime(ms){
+	        var days = Math.floor(ms / (24 * 60 * 60 * 1000));  
+	        var ms1 = ms % (24 * 60 * 60 * 1000); 
+	        var hours = Math.floor(ms1 / (60 * 60 * 1000)); 
+	        var ms2 = ms % (60 * 60 * 1000); 
+	        var minutes = Math.floor(ms2 / (60 * 1000)); 
+	        var ms3 = ms % (60 * 1000); 
+	        var seconds = Math.floor(ms3 / 1000); 
+	        return {                               
+	            days:days,
+	            hours:hours,
+	            minutes:minutes,
+	            seconds:seconds
+	        }
+	    }
+	    
+	</script>
+</body>
+</html>

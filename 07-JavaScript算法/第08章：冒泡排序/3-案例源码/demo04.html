@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //数组自带的排序方法，给对象的某个元素排序
+        var studentList = [
+            {name:"xiaoming",age:10},
+            {name:"xiaoliang",age:2},
+            {name:"xiaohong",age:9},
+            {name:"xiaogang",age:8},
+            {name:"xiaoli",age:11},
+        ]
+        studentList.sort(function(a,b){
+            return a.age - b.age;
+        })
+
+        console.log(studentList);
+    </script> 
+</body>
+
+</html>

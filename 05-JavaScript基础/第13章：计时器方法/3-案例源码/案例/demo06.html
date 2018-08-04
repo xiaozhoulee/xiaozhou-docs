@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var n = 1,t=0;
+		function showNumber(){
+			console.log(n);
+			if(n === 10){
+				clearInterval(t);
+			}
+			n++;
+		}
+		t=setInterval(showNumber,1000);
+		showNumber();   
+	</script>
+</body>
+</html>

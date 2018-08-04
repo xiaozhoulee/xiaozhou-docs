@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+    <button>添加</button>
+    <ul class="list">
+    </ul>
+    <script src="script/jquery.js"></script>
+    <script>
+        //将数据显示到水果列表
+        function showData(data){
+            var $ul = $(".list")
+            $ul.empty();
+            for(var i in data){
+                $ul.append(`<li>${data[i]} <span class="del">删除</span></li>`);   
+            }
+            
+        }
+
+        //数据初始化
+        function init(){
+            $.get("/fruitlist",function(res){
+                showData(res);
+            })
+        }
+
+        $("button").click(function(){
+            var fruitName = $("input").val();
+            $.post("/insert",{fruitName:fruitName},function(res){
+                showData(res);
+            })
+        })
+    
+        $(".list").delegate(".del","click",function(){
+            var index = $(this).parent().index();
+            $.post("/delete",{index:index},function(res){
+                showData(res);
+            })
+        })
+
+        init();
+
+
+    </script>
+</body>
+</html>

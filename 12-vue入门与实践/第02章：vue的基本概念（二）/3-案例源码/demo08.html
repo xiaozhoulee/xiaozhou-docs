@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="../../style/bootstrap.css">
+</head>
+<body>
+	<div id="app">
+		<div class="col-md-3">
+			<h2>表单</h2>
+			<form v-on:submit.prevent="insert">
+				<div class="form-group">
+					<label for="name">姓名</label>
+					<input v-model="student.name" type="text" class="form-control" id="name" placeholder="姓名">
+				</div>
+				<div class="form-group">
+					<label for="age">年龄</label>
+					<input v-model="student.age" type="text" class="form-control" id="age" placeholder="年龄">
+				</div>
+				<div class="form-group">
+					<label for="sex">性别</label>
+					<select v-model="student.sex" class="form-control" name="" id="sex">
+						<option value="男">男</option>
+						<option value="女">女</option>
+					</select>
+				</div>
+				<button type="submit" class="btn btn-default">Submit</button>
+			</form>
+		</div>
+		<div class="col-md-9">
+			<h2>学生列表</h2>
+			<table class="table table-bordered">
+				<thead>
+					<th>姓名</th>
+					<th>年龄</th>
+					<th>性别</th>
+					<th>删除</th>
+				</thead>
+				<tbody>
+					<tr v-for="(val,index) in students">
+						<td>{{val.name}}</td>
+						<td>{{val.age}}</td>
+						<td>{{val.sex}}</td>
+						<td>
+							<button v-on:click="del(index)" class="btn btn-default">删除</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<script src="../../script/vue.js"></script>
+	<script>
+		new Vue({
+			el:"#app",
+			data:{
+				student:{},
+				students:[]
+			},
+			methods:{
+				insert:function(){
+					//浅克隆一个对象
+					var newStu = {};
+					for(var i in this.student){
+						newStu[i] = this.student[i];
+					}
+					this.students.push(newStu);
+				},
+				del:function(i){
+					this.students.splice(i,1)
+				}
+			}
+		})
+	</script>
+</body>
+</html>

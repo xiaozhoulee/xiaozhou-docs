@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button>获取数据</button>
+    <script>
+        var xhr = new XMLHttpRequest();
+        document.querySelector("button").onclick = function(){
+            xhr.open("get","/data.json");
+            xhr.send();
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState===4 && xhr.status === 200){
+                    var obj = JSON.parse(xhr.responseText);  //解析json字符串
+                    alert(obj.name);  //输出对象的属性
+                    alert(obj.friends); //输出对象的属性
+                }
+            }
+        }
+    </script>
+</body>
+</html>

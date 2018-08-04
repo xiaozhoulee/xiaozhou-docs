@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>demo03-12:海盗船鱼、漂流瓶、背景和气球</title>
+	<style type="text/css">
+		@keyframes wave1{
+			50%{
+				transform:translateX(-50px);
+			}
+		}
+		@keyframes wave2{
+			50%{
+				transform:translateX(-50px);
+			}
+		}
+		@keyframes wave3{
+			50%{
+				transform:translateX(-50px);
+			}
+		}
+		@keyframes shipmove{
+			50%{
+				transform:rotate(10deg);
+			}
+		}
+		@keyframes fishmove{
+			0%{
+				transform:rotate(-20deg);
+				left:10px;
+				top:500px;
+			}
+			10%{
+				transform:rotate(5deg);
+				left:300px;
+				top:300px;
+			}
+			30%{
+				transform:rotate(-20deg);
+				left:500px;
+				top:550px;
+			}
+			50%{
+				transform:rotate(5deg);
+				left:700px;
+				top:300px;
+			}
+			70%{
+				transform:rotate(-20deg);
+				left:800px;
+				top:550px;
+			}
+			90%{
+				transform:rotate(5deg) ;
+				left:1100px;
+				top:300px;
+			}
+			100%{
+				transform:rotate(5deg) ;
+				left:1300px;
+				top:500px;
+			}
+		}
+
+		*{
+			margin:0px;
+			padding:0px;
+		}
+		.container{
+			width: 100%;
+			height:650px;
+			overflow: hidden;
+			/*添加背景*/
+			background-image: url(./images/bg.png);
+			background-repeat: no-repeat;
+			overflow: hidden;
+			
+		}
+		.ship{
+			position: absolute;
+			z-index: 5;
+			left:30%;
+			animation:shipmove 5s ease infinite;
+		}
+		/*鱼的样式*/
+		.fish{
+			position: absolute;
+			z-index: 3;
+			left:10px;
+			top:500px;
+			animation:fishmove 10s linear 1s infinite;
+		}
+		.sea{
+			margin-top:450px;
+			position: relative;
+		}
+		.wave1{
+			position: absolute;
+			top:100px;
+			left:0px;
+			z-index: 100;
+			height:110px;
+			width:130%;
+			background-image: url(./images/wave1.png);
+			animation:wave1 2s ease-in infinite;
+		}
+		.wave2{
+			position: absolute;
+			top:50px;
+			left:0px;
+			height:110px;
+			width:130%;
+			z-index: 10;
+			background-image: url(./images/wave2.png);
+			animation:wave2 3s ease-in infinite;
+		}
+		.wave3{
+			position: absolute;
+			top:0px;
+			left:0px;
+			height:110px;
+			width:130%;
+			z-index: 0;
+			background-image: url(./images/wave3.png);
+			animation:wave3 5s ease-in infinite;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="container">
+		<img class="ship" src="./images/ship.png">
+		<img class="fish" src="./images/yu.png">
+		<div class="sea">
+			<div class="wave1"></div>
+			<div class="wave2"></div>
+			<div class="wave3"></div>
+		</div>
+	</div>
+
+</body>
+</html>

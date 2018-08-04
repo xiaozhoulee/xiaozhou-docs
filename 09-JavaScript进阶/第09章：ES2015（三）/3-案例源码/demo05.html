@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var person = {
+            firstName: "小明",
+            age: 10,
+            sayName() {
+                setTimeout(() => {
+                    console.log(this.firstName)
+                }, 3000)
+            },
+            sayAge() {
+                setTimeout(() => {
+                    console.log(this.age)
+                }, 2000)
+            }
+        }
+        person.sayName();
+        person.sayAge();
+    </script>
+</body>
+
+</html>

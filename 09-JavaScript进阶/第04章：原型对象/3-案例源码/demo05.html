@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function Animal(){}
+
+		Animal.prototype.sayName = function(){
+			console.log('我是'+this.name);
+		}
+
+		function Cat(name,age){
+			this.name = name;
+			this.age = age;
+		}
+
+		Cat.prototype = new Animal();
+
+		var cat = new Cat("miaomiao",2);
+		cat.sayName();
+	</script>
+</body>
+</html>

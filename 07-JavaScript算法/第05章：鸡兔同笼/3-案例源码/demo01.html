@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getNumber(heads,foots){
+            var result = {
+                chickNumber:0,
+                rabitNumber:0
+            }
+            var chickNumber = 0;   //鸡的个数
+            var rabitNumber = 0;   //兔子的个数
+            while(chickNumber < heads){  //如果鸡的个数小于头的个数，从0开始遍历
+                rabitNumber = heads - chickNumber;   //头的个数减去鸡的个数就是兔子的个数
+                if(chickNumber * 2 + rabitNumber * 4 === foots){  //如果脚的数量与鸡和兔子的数量相匹配，则结果正确，结束循环。
+                    break;
+                }
+                chickNumber++;
+            }
+            result.chickNumber = chickNumber;
+            result.rabitNumber = rabitNumber;
+            return result;
+        }    
+
+        console.log(getNumber(35,96))
+    </script>
+</body>
+</html>

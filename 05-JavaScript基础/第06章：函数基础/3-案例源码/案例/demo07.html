@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function count(num1,sign,num2){
+			var result = 0;
+			switch(sign){
+				case "+":result = num1 + num2;break;
+				case "-":result = num1 - num2;break;
+				case "*":result = num1 * num2;break;
+				case "/":result = num1 / num2;break;
+				default:console.log("请输入真确的操作符")
+			}
+			return result;
+		}
+		console.log(count(10,"*",20));
+
+
+	</script>
+</body>
+</html>

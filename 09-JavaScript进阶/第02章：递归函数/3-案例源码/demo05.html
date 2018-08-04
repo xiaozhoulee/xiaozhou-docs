@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //深度克隆
+        var student = {
+            name:"xiaoming",
+            age:12,
+            friends:[{name:"小白"},{name:"小黑"}],
+        }
+        function cloneObj(obj){
+            var newObj = obj instanceof Array?[]:{};
+            for(var i in obj){
+                if(obj[i] instanceof Object){
+                    newObj[i] = cloneObj(obj[i]);
+                }else{
+                    newObj[i] = obj[i];
+                }
+            }
+            return newObj;
+        }
+        
+        var newStudent = cloneObj(student);
+        student.friends[0].name = "小兰";
+        console.log(newStudent);
+        console.log(student);
+    </script>
+</body>
+</html>

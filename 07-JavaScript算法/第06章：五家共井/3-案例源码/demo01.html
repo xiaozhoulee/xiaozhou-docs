@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getValue(){
+            var dep = 0;
+            var len1 = 0;
+            var len2 = 0;
+            var len3 = 0;
+            var len4 = 0;
+            var len5 = 0;
+
+            len5 = 4;
+            //循环增加len5的值
+            while(true){
+                len1 = 5;
+
+                //循环增加len1的值
+                while(true){
+                    
+                    len4 = len5 + len1 / 5;
+                    if(len4 % 3 !== 0){
+                        len1 += 5
+                        continue; //如果len4不是3的倍数，结束本次循环进入下一次循环
+                    }
+                    len3 = len4 + len5 / 4;
+                    if(len3 % 2 !== 0){
+                        len1 += 5
+                        continue; //如果len3不是2的倍数，结束本次循环进入下一次循环
+                    }
+                    len2 = len3 + len4 / 3;
+                    if(len2 + len3 / 2 === len1){
+                        dep = len1 * 2 + len2;
+                        return dep;
+                    }
+                    if(len2 + len3 / 2 < len1){
+                        break;   //len1的值过大，需要切换至外部循环
+                    }
+                    len1 += 5
+                }
+                len5 += 4;
+            }
+        }
+
+        console.log(getValue())
+    </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button>异步加载html</button>
+    <div class="content">
+        <!-- 内容加载区域 -->
+    </div>
+    <script src="script/jquery.js"></script>
+    <script>
+        $("button").click(function(){
+            $(".content").load("list.html");
+        })
+    </script>   
+</body>
+</html>

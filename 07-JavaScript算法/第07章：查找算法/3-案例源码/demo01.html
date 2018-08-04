@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [3,5,8,12,15,11,20,6];
+        Array.prototype.search = function(val){
+            for(var i = 0;i<this.length;i++){
+                if(this[i] === val){
+                    return i
+                }
+            }
+            return -1;
+        }
+
+        console.log(arr.search(12));
+        console.log(arr.search(100));
+    </script>
+</body>
+</html>

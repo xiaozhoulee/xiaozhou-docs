@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>demo04-12</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			font-family: '微软雅黑';
+		}
+		.clearfix::after{
+			content: " ";
+			height: 0;
+			clear: both;
+			display: block;
+		}
+		a{
+			text-decoration: none;
+		}
+		#pagewrap{
+			width: 980px;
+			margin: 0 auto;
+			padding: 0 20px;
+			position: relative;
+			background: #FAD2EB;
+		}
+		#header{
+			width: 100%;
+			padding:20px 20px;
+		}
+		#header a{
+			color: #000;
+		}
+		#main-nav{
+			width: 100%;
+			background: black;
+		}
+		#main-nav ul{
+			width: 70%;
+			float: left;
+		}
+		#main-nav form{
+			width: 20%;
+			float: right;
+		}
+		#main-nav li{
+			float: left;
+			margin-left: 20px;
+		}
+		#main-nav li a{
+			color: #fff;
+			font-size: 20px;
+			font-weight: bold;
+			padding: 14px 15px;
+			line-height: 100%;
+			display: block;
+		}
+		#form1{
+			float: right;
+			padding: 14px 15px;
+		}
+		#content{
+			width: 55%;
+			float: left;
+		}
+		#sidebar{
+			margin-top: 60px;
+			width: 35%;
+			float: right;
+		}
+		#footer {
+			clear: both;
+			background: black;
+			color: #838383;
+			padding: 20px 0;
+			text-align: center;
+			width: 100%;
+		}
+		#banner{
+			padding: 100px 10px;
+			box-sizing:border-box;
+			background-color: #ccc;
+		}
+		#content .article{
+			padding-bottom: 10px;
+			margin: 20px auto 40px;
+		}
+		.article .img img{
+			width: 100%;
+		}
+		#content .article .author{
+			width: 80px;
+			float: left;
+			margin: 0 20px 5px 0;
+		}
+		#content .article .author img{
+			width: 80px;
+		}
+		#content .article .title{
+			font-weight: bolder;
+			font-size: 19px;
+			margin-bottom: 5px;
+			cursor: pointer;
+		}
+		#content .article .desc{
+			color:#858585;
+		}
+		#sidebar .widget{
+			background: #FFFCF0;
+			margin-bottom: 20px;
+		}
+		#sidebar .widget .title{
+			color: #444;
+			font-weight: bold;
+			background: #DEEBF7;
+			padding: 8px 0 8px 15px;
+		}
+		#sidebar .folder li{
+			border-bottom: 1px solid #DDD;
+			padding: 8px 0 8px 15px;
+			color: #7C7C7C;
+			cursor: pointer;
+		}
+		#sidebar .comment li{
+			padding: 5px;
+			height: 45px;
+			line-height: 45px;
+			font-size: 14px;
+		}
+		#sidebar .comment img{
+			width: 32px;
+			margin: 2px;
+			float: left;
+		}
+		#sidebar .comment .name{
+			color: #1DAFE7;
+			margin: 0 5px;
+		}
+		#sidebar .comment .desc{
+			display: inline-block;
+			overflow: hidden;
+			width: 230px;		
+		}
+		#show{
+			display: none;
+		}
+		@media screen and (max-width:640px){
+			img{
+				max-width: 100%;
+				height: auto;
+			}
+			#show{
+				width: 15%;
+				display: block;
+				float: left;
+				margin: 14px 0 14px 5px;
+			}
+			#pagewrap{
+				width: 95%;
+				padding: 0 10px;
+			}
+			#header{
+				width:80%;
+			}
+			#content{
+				width: 100%;
+			}
+			#sidebar{
+				width: 100%;
+			}
+			#main-nav{
+				position: relative;
+			}
+			#main-nav #nav{
+				display: none;
+			}
+			#main-nav>#form1{
+				width: 70%;
+			}
+			#main-nav>#nav{
+				position: absolute;
+				top: 100%;
+				left: -20px;
+			}
+			#nav li{
+				width: 60%;
+				float: none;
+				margin-left:20px; 
+				background-color: #000;
+				border:1px solid #ccc;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div id="pagewrap" class="clearfix">
+		<header id="header">
+			<hgroup>
+				<h1><a href="http://qhdboyi.com">秦皇岛博易科技</a></h1>
+				<h3>秦皇岛博易科技前端开发周末班</h3>
+			</hgroup>
+		</header>
+		<nav id="main-nav" class="clearfix">
+			<input type="button" value="菜单" id="show" class="clearfix">
+			<ul class="clearfix" id="nav">
+				<li><a href="http://qhdboyi.com">博易主页</a></li>
+				<li><a href="http://qhdboyi.com">关于我们</a></li>
+				<li><a href="http://qhdboyi.com">博易课堂</a></li>
+				<li><a href="http://qhdboyi.com">博客论坛</a></li>
+				<li><a href="http://qhdboyi.com">联系我们</a></li>
+			</ul>
+			<form action="/search" id="form1" class="clearfix">
+				<input type="text" placeholder="搜索内容">
+				<input type="button" value="搜索">
+			</form>
+		</nav>
+		<div id="content" class="clearfix">
+			<section id="articles">
+				<article class="article">
+					<div class="img">
+						<img src="./images/logo1.jpg" />
+					</div>
+					<div class="author"><img src="./images/face01.jpg"></div>
+					<div class="title">秦皇岛博易科技周末班开始报名了</div>
+					<div class="desc">秦皇岛博易科技周末班开始报名了秦皇岛博易科技周末班开始报名了秦皇岛博易科技周末班开始报名了秦皇岛博易科技周末班开始报名了秦皇岛博易科技周末班开始报名了秦皇岛博易科技周末班开始报名了秦皇岛博易科技周末班开始报名了......</div>
+				</article>
+				<article class="article">
+					<div class="img">
+						<img src="./images/logo2.jpg" />
+					</div>
+					<div class="author"><img src="./images/face02.gif"></div>
+					<div class="title">母鸡和前端工程师的故事</div>
+					<div class="desc">母鸡和前端工程师的故事？母鸡和前端工程师的故事？母鸡和前端工程师的故事？母鸡和前端工程师的故事？母鸡和前端工程师的故事？母鸡和前端工程师的故事？母鸡和前端工程师的故事？母鸡和前端工程师的故事？母鸡和前端工程师的故事？......</div>
+				</article>
+				<article class="article">
+					<div class="img">
+						<img src="./images/logo3.jpg" />
+					</div>
+					<div class="author"><img src="./images/face03.jpg"></div>
+					<div class="title">好多前端工程师的面试题......</div>
+					<div class="desc">好多前端工程师的面试题好多前端工程师的面试题好多前端工程师的面试题好多前端工程师的面试题好多前端工程师的面试题好多前端工程师的面试题好多前端工程师的面试题好多前端工程师的面试题好多前端工程师的面试题好多前端工程师的面试题......</div>
+				</article>
+			</section>
+		</div>
+		<aside id="sidebar" class="clearfix">
+			<section class="widget">
+				<div class="title">文章分类</div>
+				<ul class="folder">
+					<li>最新消息(3)</li>
+					<li>面试问题(5)</li>
+					<li>技术博客(11)</li>
+					<li>教学板块(23)</li>
+				</ul>
+			</section>
+			<section class="widget">
+				<div class="title">最新评论</div>
+				<ul class="comment">
+					<li>
+						<img src="./images/face01.jpg" alt="">
+						<div class="desc">
+							<span class="name">路飞</span>
+							<span>报名联系崔老师</span>
+						</div>
+					</li>
+					<li>
+						<img src="./images/face02.gif" alt="">
+						<div class="desc">
+							<span class="name">博小易</span>
+							<span>好</span>
+						</div>
+					</li>
+					<li>
+						<img src="./images/face03.jpg" alt="">
+						<div class="desc">
+							<span class="name">不倒翁</span>
+							<span>666</span>
+						</div>
+					</li>
+				</ul>
+			</section>
+		</aside>
+		<footer id="footer">
+			<div>
+				<a href="http://qhdboyi.com/">秦皇岛博易科技开发有限公司</a>
+			</div>
+			<div class="info">
+				<span>Copyright © 2012 - 2016 . All Rights Reserved</sapn>
+			</div>		
+		</footer>
+	</div>
+
+
+	<script src="./script/jquery.js"></script>
+	<script type="text/javascript">
+		$("#show").click(function(){
+			$("#nav").slideToggle(300);
+		})
+		$(window).resize(function(){
+			if($(this).width() > 640){
+				$("#nav").css("display","block");
+			}else{
+				$("#nav").css("display","none");
+			}
+		});	
+	</script>
+</body>
+</html>

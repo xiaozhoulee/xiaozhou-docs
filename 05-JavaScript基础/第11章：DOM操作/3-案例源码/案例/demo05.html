@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button>添加节点</button>
+	<ul>
+		<li>香蕉</li>
+		<li>苹果</li>
+		<li>鸭梨</li>
+	</ul>
+	<script>
+		var btn = document.querySelector("button");
+		var ul = document.querySelector("ul");
+		btn.onclick = function(){
+			var li = document.createElement("li"); 
+			li.innerHTML = "鸭梨";
+			ul.appendChild(li); 
+		}
+	</script>
+</body>
+</html>

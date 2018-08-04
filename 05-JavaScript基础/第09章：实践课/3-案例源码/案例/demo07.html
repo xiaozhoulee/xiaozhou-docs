@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var result,num1,sign,num2;
+		
+		function getValue(){
+			num1 = Number(prompt("请输入第一个数字"));   
+			sign = prompt("请输入+-*/中的任意操作符");
+			num2 = Number(prompt("请输入第二个数字"));
+			checkValue();
+		}
+
+		function checkValue(){    //有待调试
+			if(num1 !== NaN && num2 !== NaN){
+				if(sign === "+" || sign === "-" || sign === "*" || sign === "/" ){
+					result = count(num1,sign,num2);
+					alert(result);
+				}else{
+					alert("请输入正确的操作符");
+					getValue();
+				}
+			}else{
+				alert("请输入正确的数值！");
+				getValue();
+			}
+		}
+
+		function count(n,s,m){    
+			switch(s){
+				case "+":return n+m;break;
+				case "-":return n-m;break;
+				case "*":return n*m;break;
+				case "/":return n/m;break;
+			}
+		}
+
+		function showData(){
+			console.log(num1)
+			console.log(sign)
+			console.log(num2)
+		}
+
+		getValue();
+
+		
+	</script>
+</body>
+</html>
