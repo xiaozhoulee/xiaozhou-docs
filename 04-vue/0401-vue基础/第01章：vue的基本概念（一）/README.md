@@ -1,40 +1,21 @@
-## 第01章：vue的基本概念
+# 第01章：vue的基本概念
 
 ### 一、vue概述
 
-**vue的基本概念**
+为了让本文档的内容更为简介，这里就不再复述vue的基本概念和作用了。大家只要知道两点：
 
-vue是一个mvvm框架，是目前前端开发领域最常用的三大框架之一，另两个分别是react和angular。通过使用vue框架，我们可以简化js对DOM的操作，将程序的关注点放在处理数据之上（而非操作DOM）,在学习vue之前，同学们已经基本掌握了jQuery，那么这里就用vue与jQuery比较，来说明什么是vue。。
+1. 在真正的项目开发过程中，我们通常把项目代码写在.vue和.js文件中，然后通过webpack打包我们的代码。
+2. 对于初学者打包的过程会引入额外的复杂度。所以为了让我们更容易入门，可以暂时先在html文件中引入vue.js文件，这样可以让我们更简洁地了解vue的基础特性。
 
-**学习vue之前的一些疑问**
-
-在学习vue之前，同学们总是会有很多疑问，例如vue是什么？能做什么？与jQuery或是其他的库有什么区别。这里通过下面内容来给学生解答疑惑。
-
-* 我们之前在实现页面效果的时候，都是使用jQuery操作DOM来实现效果的。例如我们要实现一个水果列表，需要在jQuery中创建li标签，让后append到ul中，如果使用vue，我们可以将数据与页面直接绑定，当我们操作数组的时候，页面直接就会变化，这样只关注数据的方式，让我们的程序逻辑更加简单
-* 关于jQuery的引入，虽然vue可以向jQuery一样通过script标签引入到html文件中，但是在真正的前端开发过程中，我们更多的是webpack这样的打包工具来打包和编译所有项目文件。
-* 虽然vue和jQuery不是同一类型的库，但是vue可以完全替代jQuery，一般情况下，在一个项目中不会同时使用vue和jQuery。
-* jQuery更适合做一些展示类的网站，没有太多的数据交互，只有页面展示和网页效果vue适合做web应用，例如电商网站的前端或者是一些某某管理系统。
-
-我们可以使用cnpm下载vue，在命令行工具中执行下面代码。
+### 二、下载vue
 
 ``` bash
 cnpm install vue
 ```
 
-在node_modules > vue > dist 目录中赋值vue.js文件，然后拷贝到我们的项目中。然后可以像引入jQuery一样，通过script标签引入vue。
+node_modules > vue > dist > vue.js
 
-我们在demo01和demo02中对比jQuery和vue如何实现数据绑定。我们在body中加入一个h1标签，然后分别通过jQuery和vue将"hello world"字符串在h1标签中显示。
-
-``` html
-<!-- demo01 -->
-<body>
-    <h1></h1>
-    <script src="../../script/jquery.js"></script>
-    <script>
-        document.querySelector('h1').innerHTML = "hello world";
-    </script>
-</body>
-```
+找到vue.js文件之后，我们可以像引入jQuery一样引入vue。
 
 ``` html
 <!-- demo02 -->
@@ -269,8 +250,6 @@ var fruits = ["香蕉","苹果","鸭梨"];
 
 在这里，我们不必考虑考虑如何删除DOM元素节点，如何操作DOM的文本节点，我们只需要将html的元素和属性与vue中的选项逐一对应，然后关注点放在数据上，就能实现我们需要的功能了。
 
-### 七、授课说明
-* 本章内容需要学员熟练掌握jQuery中DOM操作相关的内容，若学员基础较差，对jQuery中DOM操作的内容已经忘记，那么在做每个vue的案例之前，都需要先用jQuery来实现一遍，否则无法实现教学效果。
 
 
 
