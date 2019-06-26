@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.del{
+			color:red;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li><span>香蕉</span> <span class="del">删除</span></li>
+		<li><span>苹果</span> <span class="del">删除</span></li>
+		<li><span>鸭梨</span> <span class="del">删除</span></li>
+		<li><span>芒果</span> <span class="del">删除</span></li>
+		<li><span>草莓</span> <span class="del">删除</span></li>
+	</ul>
+	<script>
+		var aDel = document.querySelectorAll(".del");
+		for(var i = 0;i<aDel.length;i++){
+			aDel[i].onclick = function(){
+				var parent = this.parentNode
+				parent.parentNode.removeChild(parent)
+			}
+		}
+	</script>
+</body>
+</html>

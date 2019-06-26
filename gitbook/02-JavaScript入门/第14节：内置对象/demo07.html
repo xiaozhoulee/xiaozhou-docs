@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h1></h1>
+	<script>
+		var h1 = document.querySelector("h1");
+		function getTime(){		
+			var dateNow = new Date();
+			var hours = dateNow.getHours();      
+			var minutes = dateNow.getMinutes();  
+			var seconds = dateNow.getSeconds(); 
+			var strTimeNow = hours + ":" + minutes + ":" + seconds;
+			h1.innerHTML = strTimeNow;
+		}
+		getTime();
+		setInterval(getTime,1000);
+	</script>
+</body>
+</html>

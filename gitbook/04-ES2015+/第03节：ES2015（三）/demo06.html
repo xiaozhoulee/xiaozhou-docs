@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var person = {
+            firstName: "小明",
+            age: 10,
+            sayName() {
+                return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        console.log(this.firstName)
+                        resolve();
+                    }, 3000)
+                })
+            },
+            sayAge() {
+                return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        console.log(this.age)
+                        resolve();
+                    }, 2000)
+                })
+            }
+        }
+
+
+        person.sayName().then(() => {
+            person.sayAge();
+        });
+
+    </script>
+</body>
+
+</html>

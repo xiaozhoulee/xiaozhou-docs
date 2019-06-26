@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul> 
+    <img src="images/0.jpg">
+    <script src="script/jquery.js"></script>
+    <script>
+        var arr = ["images/0.jpg","images/1.jpg","images/2.jpg"];
+        $("li").click(function(){
+            var i = $(this).index();
+            var url = arr[i];  //获取图片的地址
+            $("img").attr("src",url);  //将图片的src属性设置成数组中指定的图片地址
+        })
+    </script>  
+</body>
+</html>

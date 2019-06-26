@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h1>内容：</h1>
+	<button>添加文本节点</button>
+	<script>
+		var h1 = document.querySelector("h1");
+		var btn = document.querySelector("button");
+
+		btn.onclick = function(){
+			var textNode = document.createTextNode("hello world");
+			//createTextNode方法可以创建一个文本节点
+			h1.appendChild(textNode);
+			//appendChild方法可以将textNode节点添加到h1标签中。
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="app">
+		<hello></hello>
+		<hello></hello>
+		<hello></hello>
+	</div>
+	<script src="../../script/vue.js"></script>
+	<script>
+		Vue.component("hello",{
+			template:"<h1>我是一个组件</h1>"
+		})
+
+		new Vue({
+			el:"#app"
+		})
+	</script>
+</body>
+</html>

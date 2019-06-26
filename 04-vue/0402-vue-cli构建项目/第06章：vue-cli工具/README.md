@@ -35,15 +35,11 @@ npm run dev
 * node_modules
 * src
 * static
-* test
 * .babelrc
 * .editorconfig
-* .eslintignore
-* .eslintrc.js
 * .gitignore
 * .postcssrc.js
 * index.html
-* package-lock.json
 * package.json
 * README.md
 
@@ -54,14 +50,6 @@ npm run dev
 # 上面已经说过的运行项目
 npm run dev
 npm run start
-
-# 测试项目 
-npm run unit
-npm run e2e
-npm run test
-
-# 编码规范校验
-npm run lint
 
 # 构建项目
 npm run build

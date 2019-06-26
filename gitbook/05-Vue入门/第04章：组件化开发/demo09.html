@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="app">
+		<app></app>
+	</div>
+	<script src="../../script/vue.js"></script>
+	<script>
+		Vue.component("app",{
+			template:`<btn v-on:appEvent="showData"></btn>`,   //当appEvent事件被触发，执行showData函数
+			methods:{
+				showData:function(){
+					alert('hello event');
+				}
+			}
+		})
+
+		Vue.component("btn",{
+			template:`<button v-on:click="btnEvent">触发</button>`,   //点击按钮，执行btnEvent函数
+			methods:{
+				btnEvent:function(){
+					this.$emit("appEvent")     //触发appEvent事件
+				}
+			}
+		})
+
+	
+		new Vue({
+			el:"#app"
+		})
+	</script>
+</body>
+</html>

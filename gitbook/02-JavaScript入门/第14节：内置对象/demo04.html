@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="number">
+	<button id="guess">猜数字</button>
+	<script>
+		var target = Math.floor(Math.random()*100+1); //生成1~100的随机数。
+		var btn = document.querySelector("#guess");
+		var number = document.querySelector("#number");
+		btn.onclick = function(){
+			var value = Number(number.value);
+			if(value > target){
+				alert("大于结果");
+			}else if(value < target){
+				alert("小于结果");
+			}else if(value === target){
+				alert("回答正确");
+			}
+		}
+	</script>
+</body>
+</html>
